@@ -14,8 +14,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:text="Campo Minado "
+        android:layout_marginTop="190dp"
+        android:fontFamily="monospace"
+        android:letterSpacing="-0.01"
+        android:shadowColor="#2196F3"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowRadius="20"
+        android:singleLine="true"
+        android:text="BombMine"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="40dp"
         android:textStyle="bold"
@@ -25,9 +33,15 @@
         android:id="@+id/author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/game_name"
-        android:layout_marginTop="10dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="monospace"
+        android:shadowColor="#03A9F4"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         android:text="Criado por: Tércio Tales"
         android:textColor="#FFFFFF"
         android:textSize="15dp"
@@ -40,7 +54,7 @@
         android:layout_height="50dp"
         android:layout_below="@+id/game_name"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="140dp"
         android:text="Jogar" />
 
     <Button
@@ -49,7 +63,13 @@
         android:layout_height="50dp"
         android:layout_below="@+id/button_play"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:text="Sair" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bomb" />
 
 </RelativeLayout>
