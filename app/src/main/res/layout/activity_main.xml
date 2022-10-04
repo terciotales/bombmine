@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3F51B5"
+    android:background="#009688"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
@@ -55,7 +55,10 @@
         android:layout_below="@+id/game_name"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="140dp"
-        android:text="Jogar" />
+        android:backgroundTint="#F87611"
+        android:text="Jogar"
+        android:textSize="16dp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button_quit"
@@ -64,6 +67,7 @@
         android:layout_below="@+id/button_play"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
+        android:backgroundTint="#DD660A"
         android:text="Sair" />
 
     <ImageView
