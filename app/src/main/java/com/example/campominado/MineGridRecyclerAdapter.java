@@ -1,5 +1,6 @@
 package com.example.campominado;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +39,7 @@ public class MineGridRecyclerAdapter extends RecyclerView.Adapter<MineGridRecycl
         return cells.size();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setCells(List<com.example.campominado.Cell> cells) {
         this.cells = cells;
         notifyDataSetChanged();
@@ -62,10 +64,10 @@ public class MineGridRecyclerAdapter extends RecyclerView.Adapter<MineGridRecycl
                 }
             });
 
-            if (cell.isRevealed()) {
-                if (cell.getValue() == com.example.campominado.Cell.BOMB) {
+            if (cell.foiRevelado()) {
+                if (cell.getValue() == com.example.campominado.Cell.BOMBA) {
                     valueTextView.setText(R.string.bomb);
-                } else if (cell.getValue() == com.example.campominado.Cell.BLANK) {
+                } else if (cell.getValue() == com.example.campominado.Cell.VAZIO) {
                     valueTextView.setText("");
                     itemView.setBackgroundColor(Color.WHITE);
                 } else {
@@ -78,8 +80,6 @@ public class MineGridRecyclerAdapter extends RecyclerView.Adapter<MineGridRecycl
                         valueTextView.setTextColor(Color.RED);
                     }
                 }
-            } else if (cell.isFlagged()) {
-                valueTextView.setText(R.string.flag);
             }
         }
     }
