@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Random;
 
 public class MineGrid {
-    private List<Cell> cells;
-    private int size;
+    private final List<Cell> cells;
+    private final int size;
 
     public MineGrid(int size) {
         this.size = size;

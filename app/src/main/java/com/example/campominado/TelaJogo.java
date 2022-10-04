@@ -14,8 +14,8 @@ import android.widget.Toast;
 
 public class TelaJogo extends AppCompatActivity implements OnCellClickListener {
     public static final long TIMER_LENGTH = 999000L;    // 999 seconds in milliseconds
-    public static final int BOMB_COUNT = 10;
-    public static final int GRID_SIZE = 10;
+    public static final int BOMB_COUNT = 1;
+    public static final int GRID_SIZE = 8;
 
     private MineGridRecyclerAdapter mineGridRecyclerAdapter;
     private TextView timer;
@@ -33,8 +33,8 @@ public class TelaJogo extends AppCompatActivity implements OnCellClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_jogo);
 
-        RecyclerView grid = findViewById(R.id.activity_main_grid);
-        grid.setLayoutManager(new GridLayoutManager(this, 10));
+        RecyclerView grid = findViewById(R.id.grid_campo_minado);
+        grid.setLayoutManager(new GridLayoutManager(this, 8));
 
         timer = findViewById(R.id.activity_main_timer);
         timerStarted = false;
@@ -59,8 +59,8 @@ public class TelaJogo extends AppCompatActivity implements OnCellClickListener {
         mineGridRecyclerAdapter = new MineGridRecyclerAdapter(BombMine.getMineGrid().getCells(), this);
         grid.setAdapter(mineGridRecyclerAdapter);
 
-        TextView smiley = findViewById(R.id.activity_main_smiley);
-        smiley.setOnClickListener(new View.OnClickListener() {
+        TextView bomb = findViewById(R.id.activity_main_bomb);
+        bomb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 BombMine = new BombMineGame(GRID_SIZE, BOMB_COUNT);
