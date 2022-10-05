@@ -39,12 +39,13 @@ public class TelaJogo extends AppCompatActivity implements OnCellClickListener {
 
         if (BombMine.ganhouJogo(cell)) {
 
+        } else if (!cell.foiRevelado()) {
+            int numTentativas = (Integer.parseInt(tentativas.getText().toString())) + 1;
+            tentativas.setText(String.valueOf(numTentativas));
         }
 
         int index = BombMine.getMineGrid().getCells().indexOf(cell);
         BombMine.getMineGrid().getCells().get(index).setRevelado(true);
-        int numTentativas = (Integer.parseInt(tentativas.getText().toString())) + 1;
-        tentativas.setText(String.valueOf(numTentativas));
 
         mineGridRecyclerAdapter.setCells(BombMine.getMineGrid().getCells());
     }
