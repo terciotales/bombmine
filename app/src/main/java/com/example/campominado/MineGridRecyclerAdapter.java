@@ -54,7 +54,7 @@ public class MineGridRecyclerAdapter extends RecyclerView.Adapter<MineGridRecycl
             valueTextView = itemView.findViewById(R.id.item_cell_value);
         }
 
-        public void bind(final com.example.campominado.Cell cell) {
+        public void bind(final Cell cell) {
             itemView.setBackgroundColor(Color.GRAY);
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -65,20 +65,11 @@ public class MineGridRecyclerAdapter extends RecyclerView.Adapter<MineGridRecycl
             });
 
             if (cell.foiRevelado()) {
-                if (cell.getValue() == com.example.campominado.Cell.BOMBA) {
+                if (cell.getValue() == Cell.BOMBA) {
                     valueTextView.setText(R.string.bomb);
-                } else if (cell.getValue() == com.example.campominado.Cell.VAZIO) {
+                } else {
                     valueTextView.setText("");
                     itemView.setBackgroundColor(Color.WHITE);
-                } else {
-                    valueTextView.setText(String.valueOf(cell.getValue()));
-                    if (cell.getValue() == 1) {
-                        valueTextView.setTextColor(Color.BLUE);
-                    } else if (cell.getValue() == 2) {
-                        valueTextView.setTextColor(Color.GREEN);
-                    } else if (cell.getValue() == 3) {
-                        valueTextView.setTextColor(Color.RED);
-                    }
                 }
             }
         }

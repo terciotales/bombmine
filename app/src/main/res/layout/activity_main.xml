@@ -57,6 +57,7 @@
         android:layout_marginTop="140dp"
         android:backgroundTint="#F87611"
         android:text="Jogar"
+        android:textColor="#FFFFFF"
         android:textSize="16dp"
         android:textStyle="bold" />
 
@@ -68,7 +69,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:backgroundTint="#DD660A"
-        android:text="Sair" />
+        android:text="Sair"
+        android:textColor="#FFFFFF" />
 
     <ImageView
         android:id="@+id/imageView3"
