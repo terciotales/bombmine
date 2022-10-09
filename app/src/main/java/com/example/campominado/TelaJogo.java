@@ -47,7 +47,7 @@ public class TelaJogo extends AppCompatActivity implements OnCellClickListener {
             intent.putExtra("tentativas", tentativas.getText().toString());
             startActivity(intent);
             finish();
-        } else {
+        } else if (!cell.foiRevelado()) {
             int numTentativas = (Integer.parseInt(tentativas.getText().toString())) + 1;
             tentativas.setText(String.valueOf(numTentativas));
         }
