@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -24,12 +25,14 @@ public class TelaJogo extends AppCompatActivity implements OnCellClickListener {
         grid.setAdapter(mineGridRecyclerAdapter);
 
         TextView bomb = findViewById(R.id.activity_main_bomb);
+        TextView tentativas = findViewById(R.id.tentativas);
 
         bomb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 BombMine = new BombMineGame(8);
                 mineGridRecyclerAdapter.setCells(BombMine.getMineGrid().getCells());
+                tentativas.setText("0");
             }
         });
     }
@@ -38,8 +41,13 @@ public class TelaJogo extends AppCompatActivity implements OnCellClickListener {
         TextView tentativas = findViewById(R.id.tentativas);
 
         if (BombMine.ganhouJogo(cell)) {
-
-        } else if (!cell.foiRevelado()) {
+            int numTentativas = (Integer.parseInt(tentativas.getText().toString())) + 1;
+            tentativas.setText(String.valueOf(numTentativas));
+            Intent intent = new Intent(TelaJogo.this, TelaFinal.class);
+            intent.putExtra("tentativas", tentativas.getText().toString());
+            startActivity(intent);
+            finish();
+        } else {
             int numTentativas = (Integer.parseInt(tentativas.getText().toString())) + 1;
             tentativas.setText(String.valueOf(numTentativas));
         }
